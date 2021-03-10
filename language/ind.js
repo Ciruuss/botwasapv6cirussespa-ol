@@ -81,11 +81,11 @@ exports.pc = () => {
 }
 
 exports.registered = (namaUser, umurUser, serialUser, time, sender) => {
-	return`*「DATOS DEL PAÍS」 *\n\nya está registrado con los datos\n\n┏━⊱nombre\n┗⊱${namaUser}\n┏━⊱numero\n┗⊱wa.me/${sender.split("@")[0]}\n┏━⊱edad\n┗⊱${umurUser}\n┏━⊱tiempo de registro\n┗⊱${time}\n\n┏━❉*NS*❉━\n┣⊱${serialUser}\n┗⊱NOTA: no olvide este número porque es importante`
+	return`*「DATOS DEL PAÍS」 *\n\nya está registrado con los datos\n\n┏━⊱nombre\n┗⊱${namaUser}\n┏━⊱numero\n┗⊱wa.me/${sender.split("@")[0]}\n┏━⊱edad\n┗⊱${umurUser}\n┏━⊱tiempo de registro\n┗⊱${time}\n\n┏━❉* NS *❉━\n┣⊱${serialUser}\n┗⊱NOTA: no olvide este número porque es importante`
 }
 
 exports.cmdnf = (prefix, command) => {
-	return`command *${prefix}${command}*no encontrado\intente escribir *${prefix}menú*`
+	return`command *${prefix}${command}*no encontrado\intente escribir *${prefix}menu*`
 }
 
 exports.owneresce = (pushname) => {
@@ -255,52 +255,70 @@ ${a}❏MENÚ PROPIETARIO${a}
  ${a}│•${prefix}clone${a}
  ${a}╰•${prefix}setppbot${a}
 
+${a}❏ACERCA DEL BOT${a}
+ ${a}│ • Nombre : ${client.user.name}${a}
+ ${a}│ • Navegador : ${client.browserDescription[1]}${a}
+ ${a}│ • Servidor : ${client.browserDescription[0]}${a}
+ ${a}│ • Versión : ${client.browserDescription[2]}${a}
+ ${a}│ • Velocidad : ${process.uptime()}${a}
+ ${a}│ • Teléfono : ${client.user.phone.device_manufacturer}${a}
+ ${a}╰ • Versión de whatsapp : ${client.user.phone.wa_version}${a}
+ 
+${a}❏Gracias a${a}
+ ${a}│${a}
+ ${a}│ • Ciruuss <dev>${a}
+ ${a}│ • FADHIL GRAPHY <partner>${a}
+ ${a}│ • MHANKBARBARS <sc ori>${a}
+ ${a}│ • MYBOT TEAM <team>${a}
+ ${a}│${a}
+ ${a}╰ • NOTE : jangan ngemis${a}
+`
 }
 
 exports.levelup = (pushname, sender, getLevelingXp,  getLevel, getLevelingLevel, role) => {
 	return`
 	
-*「 SELAMAT 」*
-┏⊱ *Nama* : ${pushname}
-┣⊱ *Nomer* : wa.me/${sender.split("@")[0]}
+*「 CONTENTO 」*
+┏⊱ *Nombre* : ${pushname}
+┣⊱ *Numero* : wa.me/${sender.split("@")[0]}
 ┣⊱ *Xp* : ${getLevelingXp(sender)}
-┣⊱ *Limit* : +3
-┣⊱ *Role*: ${role}
-┗⊱ *Level* : ${getLevel} ⊱ ${getLevelingLevel(sender)}
+┣⊱ *Limite* : +3
+┣⊱ *Rol*: ${role}
+┗⊱ *Nivel* : ${getLevel} ⊱ ${getLevelingLevel(sender)}
 `}
  
 exports.limitend = (pushname) => {
-	return`*maaf ${pushname} limit hari ini habis*\n*beli limit untuk mendapatkan limit/ naik level*`
+	return`*lo siento, el límite de ${pushname} se agota hoy *\n*límite de compra para obtener el límite/subir de nivel*`
 }
 
 exports.limitcount = (limitCounts) => {
 	return`
-*「 LIMIT COUNT 」*
-sisa limit anda : ${limitCounts}
+*「 CONTAR LÍMITE 」*
+el resto de tu límite : ${limitCounts}
 
-NOTE : untuk mendapatkan limit. bisa lewat naik level atau buylimit`
+NOTE : para llegar al límite.  puede pasar de nivel o límite de compra`
 }
 
 exports.satukos = () => {
-	return`*Tambah parameter 1/enable atau 0/disable`
+	return`*Agregue el parámetro 1/habilitar o 0/deshabilitar`
 }
 
 exports.uangkau = (pushname, sender, uangkau) => {
-	return`*┏⊱ 「 ATM 」⊰━┓*\n┣⊱ *Nama* : ${pushname}\n┣⊱ *Nomer* : ${sender.split("@")[0]}\n┣⊱ *Uang* : ${uangkau}\n┗━━━━━━━━━━`
+	return`*┏⊱ 「 ATM 」⊰━┓*\n┣⊱ *Nombre* : ${pushname}\n┣⊱ *Numero* : ${sender.split("@")[0]}\n┣⊱ *Dinero* : ${uangkau}\n┗━━━━━━━━━━`
 }
 
 exports.afkOn = (pushname, reason) => {
-    return `Fitur AFK berhasil *diaktifkan*!\n\n➸ *Username*: ${pushname}\n➸ *Alasan*: ${reason}`
+    return `La función AFK funciona *habilitado*!\n\n➸ *Usuario*: ${pushname}\n➸ *Razón*: ${reason}`
 }
 
 exports.afkOnAlready = () => {
-    return `Fitur AFK telah diaktifkan sebelumnya.`
+    return `La función AFK se activó de antemano.`
 }
 
 exports.afkMentioned = (getReason, getTime) => {
-    return `*「 AFK MODE 」*\n\nSssttt! Orangnya lagi AFK, jangan diganggu!\n➸ *Alasan*: ${getReason}\n➸ *Sejak*: ${getTime}`
+    return `*「 AFK MODE 」*\n\nSssttt! La persona está AFK, no te molestes!\n➸ *Razón*: ${getReason}\n➸ *Sejak*: ${getTime}`
 }
 
 exports.afkDone = (pushname) => {
-    return `*${pushname}* telah kembali dari AFK! Selamat datang kembali~`
+    return `*${pushname}* ha vuelto de AFK!  Bienvenido de nuevo~`
 }
